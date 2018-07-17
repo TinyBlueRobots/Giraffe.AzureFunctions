@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <NoWarn>NU1701</NoWarn>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FormatExpressions.fs" />
+    <Compile Include="Core.fs" />
+    <Compile Include="ModelBinding.fs" />
+    <Compile Include="Routing.fs" />
+    <Compile Include="HttpStatusCodeHandlers.fs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="2.2.0" />
+    <PackageReference Include="TaskBuilder.fs" Version="2.0.0" />
+  </ItemGroup>
+</Project>
